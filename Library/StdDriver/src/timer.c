@@ -6,6 +6,8 @@
  * @brief    NUC1261 series Timer Controller(Timer) driver source file
  *
  * @note
+ * SPDX-License-Identifier: Apache-2.0
+ *
  * Copyright (C) 2016 Nuvoton Technology Corp. All rights reserved.
 *****************************************************************************/
 #include "NUC1261.h"
