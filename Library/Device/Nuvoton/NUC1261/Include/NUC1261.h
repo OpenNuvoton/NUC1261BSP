@@ -2308,9 +2308,12 @@ typedef struct
      * |        |          |If CIOINI is set to 1, the default value is 0xFFFF_FFFF and all pins will be quasi-bidirectional mode after chip powered on.
      * |        |          |If CIOINI is set to 0, the default value is 0x0000_0000 and all pins will be input mode after chip powered on.
      * |        |          |Note2:
-     * |        |          |Max. n=15 for port A/B/C/D/E.
-     * |        |          |Max. n=7 for port F.
-     * |        |          |Note3: The PE.14/PE.15 pin is ignored.
+     * |        |          |Max. n=3 for port A.
+     * |        |          |n=0~8, 11, 15 for port B.
+     * |        |          |Max. n=7 for port C.
+     * |        |          |n=0~3, 7~9, 12~15 for port D.
+     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::DINOFF
      * Offset: 0x04/0x44/0x84/0xC4/0x104/0x144  PA-F Digital Input Path Disable Control
      * ---------------------------------------------------------------------------------------------------
@@ -2321,10 +2324,13 @@ typedef struct
      * |        |          |If input is analog signal, users can disable Px.n digital input path to avoid input current leakage.
      * |        |          |0 = Px.n digital input path Enabled.
      * |        |          |1 = Px.n digital input path Disabled (digital input tied to low).
-     * |        |          |Note1:
-     * |        |          |Max. n=15 for port A/B/C/D/E.
-     * |        |          |Max. n=7 for port F.
-     * |        |          |Note2: The PE.14/PE.15 pin is ignored.
+     * |        |          |Note:
+     * |        |          |Max. n=3 for port A.
+     * |        |          |n=0~8, 11, 15 for port B.
+     * |        |          |Max. n=7 for port C.
+     * |        |          |n=0~3, 7~9, 12~15 for port D.
+     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::DOUT
      * Offset: 0x08/0x48/0x88/0xC8/0x108/0x148  PA-F Data Output Value
      * ---------------------------------------------------------------------------------------------------
@@ -2334,10 +2340,13 @@ typedef struct
      * |        |          |Each of these bits controls the status of a Px.n pin when the Px.n is configured as Push-pull output, Open-drain output or Quasi-bidirectional mode.
      * |        |          |0 = Px.n will drive Low if the Px.n pin is configured as Push-pull output, Open-drain output or Quasi-bidirectional mode.
      * |        |          |1 = Px.n will drive High if the Px.n pin is configured as Push-pull output or Quasi-bidirectional mode.
-     * |        |          |Note1:
-     * |        |          |Max. n=15 for port A/B/C/D/E.
-     * |        |          |Max. n=7 for port F.
-     * |        |          |Note2: The PE.14/PE.15 pin is ignored.
+     * |        |          |Note:
+     * |        |          |Max. n=3 for port A.
+     * |        |          |n=0~8, 11, 15 for port B.
+     * |        |          |Max. n=7 for port C.
+     * |        |          |n=0~3, 7~9, 12~15 for port D.
+     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::DATMSK
      * Offset: 0x0C/0x4C/0x8C/0xCC/0x10C/0x14C  PA-F Data Output Write Mask
      * ---------------------------------------------------------------------------------------------------
@@ -2351,9 +2360,12 @@ typedef struct
      * |        |          |1 = Corresponding DOUT (Px_DOUT[n]) bit protected.
      * |        |          |Note1: This function only protects the corresponding DOUT (Px_DOUT[n]) bit, and will not protect the corresponding PDIO (Pxn_PDIO[0]) bit.
      * |        |          |Note2:
-     * |        |          |Max. n=15 for port A/B/C/D/E.
-     * |        |          |Max. n=7 for port F.
-     * |        |          |Note3: The PE.14/PE.15 pin is ignored.
+     * |        |          |Max. n=3 for port A.
+     * |        |          |n=0~8, 11, 15 for port B.
+     * |        |          |Max. n=7 for port C.
+     * |        |          |n=0~3, 7~9, 12~15 for port D.
+     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::PIN
      * Offset: 0x10/0x50/0x90/0xD0/0x110/0x150  PA-F Pin Value
      * ---------------------------------------------------------------------------------------------------
@@ -2362,10 +2374,13 @@ typedef struct
      * |[n]     |PINn      |Port A-F Pin[n] Pin Value
      * |        |          |Each bit of the register reflects the actual status of the respective Px.n pin.
      * |        |          |If the bit is 1, it indicates the corresponding pin status is high; else the pin status is low.
-     * |        |          |Note1:
-     * |        |          |Max. n=15 for port A/B/C/D/E.
-     * |        |          |Max. n=7 for port F.
-     * |        |          |Note2: The PE.14/PE.15 pin is ignored.
+     * |        |          |Note:
+     * |        |          |Max. n=3 for port A.
+     * |        |          |n=0~8, 11, 15 for port B.
+     * |        |          |Max. n=7 for port C.
+     * |        |          |n=0~3, 7~9, 12~15 for port D.
+     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::DBEN
      * Offset: 0x14/0x54/0x94/0xD4/0x114/0x154  PA-F De-Bounce Enable Control
      * ---------------------------------------------------------------------------------------------------
@@ -2379,10 +2394,13 @@ typedef struct
      * |        |          |1 = Px.n de-bounce function Enabled.
      * |        |          |The de-bounce function is valid only for edge triggered interrupt.
      * |        |          |If the interrupt mode is level triggered, the de-bounce enable bit is ignored.
-     * |        |          |Note1:
-     * |        |          |Max. n=15 for port A/B/C/D/E.
-     * |        |          |Max. n=7 for port F.
-     * |        |          |Note2: The PE.14/PE.15 pin is ignored.
+     * |        |          |Note:
+     * |        |          |Max. n=3 for port A.
+     * |        |          |n=0~8, 11, 15 for port B.
+     * |        |          |Max. n=7 for port C.
+     * |        |          |n=0~3, 7~9, 12~15 for port D.
+     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::INTTYPE
      * Offset: 0x18/0x58/0x98/0xD8/0x118/0x158  PA-F Interrupt Trigger Type Control
      * ---------------------------------------------------------------------------------------------------
@@ -2398,10 +2416,13 @@ typedef struct
      * |        |          |If both levels to trigger interrupt are set, the setting is ignored and no interrupt will occur.
      * |        |          |The de-bounce function is valid only for edge triggered interrupt.
      * |        |          |If the interrupt mode is level triggered, the de-bounce enable bit is ignored.
-     * |        |          |Note1:
-     * |        |          |Max. n=15 for port A/B/C/D/E.
-     * |        |          |Max. n=7 for port F.
-     * |        |          |Note2: The PE.14/PE.15 pin is ignored.
+     * |        |          |Note:
+     * |        |          |Max. n=3 for port A.
+     * |        |          |n=0~8, 11, 15 for port B.
+     * |        |          |Max. n=7 for port C.
+     * |        |          |n=0~3, 7~9, 12~15 for port D.
+     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::INTEN
      * Offset: 0x1C/0x5C/0x9C/0xDC/0x11C/0x15C  PA-F Interrupt Enable Control
      * ---------------------------------------------------------------------------------------------------
@@ -2415,10 +2436,13 @@ typedef struct
      * |        |          |If the interrupt is edge trigger(TYPE (Px_INTTYPE[n]) bit is set to 0), the input Px.n pin will generate the interrupt while this pin state changed from high to low.
      * |        |          |0 = Px.n level low or high to low interrupt Disabled.
      * |        |          |1 = Px.n level low or high to low interrupt Enabled.
-     * |        |          |Note1:
-     * |        |          |Max. n=15 for port A/B/C/D/E.
-     * |        |          |Max. n=7 for port F.
-     * |        |          |Note2: The PE.14/PE.15 pin is ignored.
+     * |        |          |Note:
+     * |        |          |Max. n=3 for port A.
+     * |        |          |n=0~8, 11, 15 for port B.
+     * |        |          |Max. n=7 for port C.
+     * |        |          |n=0~3, 7~9, 12~15 for port D.
+     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0~4, 7 for port F.
      * |[n+16   |RHIENn    |Port A-F Pin[n] Rising Edge or High Level Interrupt Trigger Type Enable Bit
      * |        |          |The RHIEN (Px_INTEN[n+16]) bit is used to enable the interrupt for each of the corresponding input Px.n pin.
      * |        |          |Set bit to 1 also enable the pin wake-up function.
@@ -2427,10 +2451,13 @@ typedef struct
      * |        |          |If the interrupt is edge trigger (TYPE (Px_INTTYPE[n]) bit is set to 0), the input Px.n pin will generate the interrupt while this pin state changed from low to high.
      * |        |          |0 = Px.n level high or low to high interrupt Disabled.
      * |        |          |1 = Px.n level high or low to high interrupt Enabled.
-     * |        |          |Note1:
-     * |        |          |Max. n=15 for port A/B/C/D/E.
-     * |        |          |Max. n=7 for port F.
-     * |        |          |Note2: The PE.14/PE.15 pin is ignored.
+     * |        |          |Note:
+     * |        |          |Max. n=3 for port A.
+     * |        |          |n=0~8, 11, 15 for port B.
+     * |        |          |Max. n=7 for port C.
+     * |        |          |n=0~3, 7~9, 12~15 for port D.
+     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::INTSRC
      * Offset: 0x20/0x60/0xA0/0xE0/0x120/0x160  PA-F Interrupt Source Flag
      * ---------------------------------------------------------------------------------------------------
@@ -2443,10 +2470,13 @@ typedef struct
      * |        |          |Read Operation :
      * |        |          |0 = No interrupt at Px.n.
      * |        |          |1 = Px.n generates an interrupt.
-     * |        |          |Note1:
-     * |        |          |Max. n=15 for port A/B/C/D/E.
-     * |        |          |Max. n=7 for port F.
-     * |        |          |Note2: The PE.14/PE.15 pin is ignored.
+     * |        |          |Note:
+     * |        |          |Max. n=3 for port A.
+     * |        |          |n=0~8, 11, 15 for port B.
+     * |        |          |Max. n=7 for port C.
+     * |        |          |n=0~3, 7~9, 12~15 for port D.
+     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::SMTEN
      * Offset: 0x24/0x64/0xA4/0xE4/0x124/0x164  PA-F Input Schmitt Trigger Enable
      * ---------------------------------------------------------------------------------------------------
@@ -2455,10 +2485,13 @@ typedef struct
      * |[n]     |SMTENn    |Port 0-5 Pin[n] Input Schmitt Trigger Enable Bit
      * |        |          |0 = Px.n input schmitt trigger function Disabled.
      * |        |          |1 = Px.n input schmitt trigger function Enabled.
-     * |        |          |Note1:
-     * |        |          |Max. n=15 for port A/B/C/D/E.
-     * |        |          |Max. n=7 for port F.
-     * |        |          |Note2: The PE.14/PE.15 pin is ignored.
+     * |        |          |Note:
+     * |        |          |Max. n=3 for port A.
+     * |        |          |n=0~8, 11, 15 for port B.
+     * |        |          |Max. n=7 for port C.
+     * |        |          |n=0~3, 7~9, 12~15 for port D.
+     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::SLEWCTL
      * Offset: 0x28/0x68/0xA8/0xE8/0x128/0x168  PA-F High Slew Rate Control
      * ---------------------------------------------------------------------------------------------------
@@ -2467,10 +2500,13 @@ typedef struct
      * |[n]     |HSRENn    |Port 0-5 Pin[n] High Slew Rate Control
      * |        |          |0 = Px.n output with basic slew rate.
      * |        |          |1 = Px.n output with higher slew rate.
-     * |        |          |Note1:
-     * |        |          |Max. n=15 for port A/B/C/D/E.
-     * |        |          |Max. n=7 for port F.
-     * |        |          |Note2: The PE.14/PE.15 pin is ignored.
+     * |        |          |Note:
+     * |        |          |Max. n=3 for port A.
+     * |        |          |n=0~8, 11, 15 for port B.
+     * |        |          |Max. n=7 for port C.
+     * |        |          |n=0~3, 7~9, 12~15 for port D.
+     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::DRVCTL
      * Offset: 0x12C  PE High Drive Strength Control
      * ---------------------------------------------------------------------------------------------------
@@ -11895,42 +11931,6 @@ typedef struct
 #define SYS_GPA_MFPL_PA3MFP_Pos          (12)                                              /*!< SYS_T::GPA_MFPL: PA3MFP Position       */
 #define SYS_GPA_MFPL_PA3MFP_Msk          (0xful << SYS_GPA_MFPL_PA3MFP_Pos)                /*!< SYS_T::GPA_MFPL: PA3MFP Mask           */
 
-#define SYS_GPA_MFPL_PA4MFP_Pos          (16)                                              /*!< SYS_T::GPA_MFPL: PA4MFP Position       */
-#define SYS_GPA_MFPL_PA4MFP_Msk          (0xful << SYS_GPA_MFPL_PA4MFP_Pos)                /*!< SYS_T::GPA_MFPL: PA4MFP Mask           */
-
-#define SYS_GPA_MFPL_PA5MFP_Pos          (20)                                              /*!< SYS_T::GPA_MFPL: PA5MFP Position       */
-#define SYS_GPA_MFPL_PA5MFP_Msk          (0xful << SYS_GPA_MFPL_PA5MFP_Pos)                /*!< SYS_T::GPA_MFPL: PA5MFP Mask           */
-
-#define SYS_GPA_MFPL_PA6MFP_Pos          (24)                                              /*!< SYS_T::GPA_MFPL: PA6MFP Position       */
-#define SYS_GPA_MFPL_PA6MFP_Msk          (0xful << SYS_GPA_MFPL_PA6MFP_Pos)                /*!< SYS_T::GPA_MFPL: PA6MFP Mask           */
-
-#define SYS_GPA_MFPL_PA7MFP_Pos          (28)                                              /*!< SYS_T::GPA_MFPL: PA7MFP Position       */
-#define SYS_GPA_MFPL_PA7MFP_Msk          (0xful << SYS_GPA_MFPL_PA7MFP_Pos)                /*!< SYS_T::GPA_MFPL: PA7MFP Mask           */
-
-#define SYS_GPA_MFPH_PA8MFP_Pos          (0)                                               /*!< SYS_T::GPA_MFPH: PA8MFP Position       */
-#define SYS_GPA_MFPH_PA8MFP_Msk          (0xful << SYS_GPA_MFPH_PA8MFP_Pos)                /*!< SYS_T::GPA_MFPH: PA8MFP Mask           */
-
-#define SYS_GPA_MFPH_PA9MFP_Pos          (4)                                               /*!< SYS_T::GPA_MFPH: PA9MFP Position       */
-#define SYS_GPA_MFPH_PA9MFP_Msk          (0xful << SYS_GPA_MFPH_PA9MFP_Pos)                /*!< SYS_T::GPA_MFPH: PA9MFP Mask           */
-
-#define SYS_GPA_MFPH_PA10MFP_Pos         (8)                                               /*!< SYS_T::GPA_MFPH: PA10MFP Position      */
-#define SYS_GPA_MFPH_PA10MFP_Msk         (0xful << SYS_GPA_MFPH_PA10MFP_Pos)               /*!< SYS_T::GPA_MFPH: PA10MFP Mask          */
-
-#define SYS_GPA_MFPH_PA11MFP_Pos         (12)                                              /*!< SYS_T::GPA_MFPH: PA11MFP Position      */
-#define SYS_GPA_MFPH_PA11MFP_Msk         (0xful << SYS_GPA_MFPH_PA11MFP_Pos)               /*!< SYS_T::GPA_MFPH: PA11MFP Mask          */
-
-#define SYS_GPA_MFPH_PA12MFP_Pos         (16)                                              /*!< SYS_T::GPA_MFPH: PA12MFP Position      */
-#define SYS_GPA_MFPH_PA12MFP_Msk         (0xful << SYS_GPA_MFPH_PA12MFP_Pos)               /*!< SYS_T::GPA_MFPH: PA12MFP Mask          */
-
-#define SYS_GPA_MFPH_PA13MFP_Pos         (20)                                              /*!< SYS_T::GPA_MFPH: PA13MFP Position      */
-#define SYS_GPA_MFPH_PA13MFP_Msk         (0xful << SYS_GPA_MFPH_PA13MFP_Pos)               /*!< SYS_T::GPA_MFPH: PA13MFP Mask          */
-
-#define SYS_GPA_MFPH_PA14MFP_Pos         (24)                                              /*!< SYS_T::GPA_MFPH: PA14MFP Position      */
-#define SYS_GPA_MFPH_PA14MFP_Msk         (0xful << SYS_GPA_MFPH_PA14MFP_Pos)               /*!< SYS_T::GPA_MFPH: PA14MFP Mask          */
-
-#define SYS_GPA_MFPH_PA15MFP_Pos         (28)                                              /*!< SYS_T::GPA_MFPH: PA15MFP Position      */
-#define SYS_GPA_MFPH_PA15MFP_Msk         (0xful << SYS_GPA_MFPH_PA15MFP_Pos)               /*!< SYS_T::GPA_MFPH: PA15MFP Mask          */
-
 #define SYS_GPB_MFPL_PB0MFP_Pos          (0)                                               /*!< SYS_T::GPB_MFPL: PB0MFP Position       */
 #define SYS_GPB_MFPL_PB0MFP_Msk          (0xful << SYS_GPB_MFPL_PB0MFP_Pos)                /*!< SYS_T::GPB_MFPL: PB0MFP Mask           */
 
@@ -11958,23 +11958,8 @@ typedef struct
 #define SYS_GPB_MFPH_PB8MFP_Pos          (0)                                               /*!< SYS_T::GPB_MFPH: PB8MFP Position       */
 #define SYS_GPB_MFPH_PB8MFP_Msk          (0xful << SYS_GPB_MFPH_PB8MFP_Pos)                /*!< SYS_T::GPB_MFPH: PB8MFP Mask           */
 
-#define SYS_GPB_MFPH_PB9MFP_Pos          (4)                                               /*!< SYS_T::GPB_MFPH: PB9MFP Position       */
-#define SYS_GPB_MFPH_PB9MFP_Msk          (0xful << SYS_GPB_MFPH_PB9MFP_Pos)                /*!< SYS_T::GPB_MFPH: PB9MFP Mask           */
-
-#define SYS_GPB_MFPH_PB10MFP_Pos         (8)                                               /*!< SYS_T::GPB_MFPH: PB10MFP Position      */
-#define SYS_GPB_MFPH_PB10MFP_Msk         (0xful << SYS_GPB_MFPH_PB10MFP_Pos)               /*!< SYS_T::GPB_MFPH: PB10MFP Mask          */
-
 #define SYS_GPB_MFPH_PB11MFP_Pos         (12)                                              /*!< SYS_T::GPB_MFPH: PB11MFP Position      */
 #define SYS_GPB_MFPH_PB11MFP_Msk         (0xful << SYS_GPB_MFPH_PB11MFP_Pos)               /*!< SYS_T::GPB_MFPH: PB11MFP Mask          */
-
-#define SYS_GPB_MFPH_PB12MFP_Pos         (16)                                              /*!< SYS_T::GPB_MFPH: PB12MFP Position      */
-#define SYS_GPB_MFPH_PB12MFP_Msk         (0xful << SYS_GPB_MFPH_PB12MFP_Pos)               /*!< SYS_T::GPB_MFPH: PB12MFP Mask          */
-
-#define SYS_GPB_MFPH_PB13MFP_Pos         (20)                                              /*!< SYS_T::GPB_MFPH: PB13MFP Position      */
-#define SYS_GPB_MFPH_PB13MFP_Msk         (0xful << SYS_GPB_MFPH_PB13MFP_Pos)               /*!< SYS_T::GPB_MFPH: PB13MFP Mask          */
-
-#define SYS_GPB_MFPH_PB14MFP_Pos         (24)                                              /*!< SYS_T::GPB_MFPH: PB14MFP Position      */
-#define SYS_GPB_MFPH_PB14MFP_Msk         (0xful << SYS_GPB_MFPH_PB14MFP_Pos)               /*!< SYS_T::GPB_MFPH: PB14MFP Mask          */
 
 #define SYS_GPB_MFPH_PB15MFP_Pos         (28)                                              /*!< SYS_T::GPB_MFPH: PB15MFP Position      */
 #define SYS_GPB_MFPH_PB15MFP_Msk         (0xful << SYS_GPB_MFPH_PB15MFP_Pos)               /*!< SYS_T::GPB_MFPH: PB15MFP Mask          */
@@ -12003,30 +11988,6 @@ typedef struct
 #define SYS_GPC_MFPL_PC7MFP_Pos          (28)                                              /*!< SYS_T::GPC_MFPL: PC7MFP Position       */
 #define SYS_GPC_MFPL_PC7MFP_Msk          (0xful << SYS_GPC_MFPL_PC7MFP_Pos)                /*!< SYS_T::GPC_MFPL: PC7MFP Mask           */
 
-#define SYS_GPC_MFPH_PC8MFP_Pos          (0)                                               /*!< SYS_T::GPC_MFPH: PC8MFP Position       */
-#define SYS_GPC_MFPH_PC8MFP_Msk          (0xful << SYS_GPC_MFPH_PC8MFP_Pos)                /*!< SYS_T::GPC_MFPH: PC8MFP Mask           */
-
-#define SYS_GPC_MFPH_PC9MFP_Pos          (4)                                               /*!< SYS_T::GPC_MFPH: PC9MFP Position       */
-#define SYS_GPC_MFPH_PC9MFP_Msk          (0xful << SYS_GPC_MFPH_PC9MFP_Pos)                /*!< SYS_T::GPC_MFPH: PC9MFP Mask           */
-
-#define SYS_GPC_MFPH_PC10MFP_Pos         (8)                                               /*!< SYS_T::GPC_MFPH: PC10MFP Position      */
-#define SYS_GPC_MFPH_PC10MFP_Msk         (0xful << SYS_GPC_MFPH_PC10MFP_Pos)               /*!< SYS_T::GPC_MFPH: PC10MFP Mask          */
-
-#define SYS_GPC_MFPH_PC11MFP_Pos         (12)                                              /*!< SYS_T::GPC_MFPH: PC11MFP Position      */
-#define SYS_GPC_MFPH_PC11MFP_Msk         (0xful << SYS_GPC_MFPH_PC11MFP_Pos)               /*!< SYS_T::GPC_MFPH: PC11MFP Mask          */
-
-#define SYS_GPC_MFPH_PC12MFP_Pos         (16)                                              /*!< SYS_T::GPC_MFPH: PC12MFP Position      */
-#define SYS_GPC_MFPH_PC12MFP_Msk         (0xful << SYS_GPC_MFPH_PC12MFP_Pos)               /*!< SYS_T::GPC_MFPH: PC12MFP Mask          */
-
-#define SYS_GPC_MFPH_PC13MFP_Pos         (20)                                              /*!< SYS_T::GPC_MFPH: PC13MFP Position      */
-#define SYS_GPC_MFPH_PC13MFP_Msk         (0xful << SYS_GPC_MFPH_PC13MFP_Pos)               /*!< SYS_T::GPC_MFPH: PC13MFP Mask          */
-
-#define SYS_GPC_MFPH_PC14MFP_Pos         (24)                                              /*!< SYS_T::GPC_MFPH: PC14MFP Position      */
-#define SYS_GPC_MFPH_PC14MFP_Msk         (0xful << SYS_GPC_MFPH_PC14MFP_Pos)               /*!< SYS_T::GPC_MFPH: PC14MFP Mask          */
-
-#define SYS_GPC_MFPH_PC15MFP_Pos         (28)                                              /*!< SYS_T::GPC_MFPH: PC15MFP Position      */
-#define SYS_GPC_MFPH_PC15MFP_Msk         (0xful << SYS_GPC_MFPH_PC15MFP_Pos)               /*!< SYS_T::GPC_MFPH: PC15MFP Mask          */
-
 #define SYS_GPD_MFPL_PD0MFP_Pos          (0)                                               /*!< SYS_T::GPD_MFPL: PD0MFP Position       */
 #define SYS_GPD_MFPL_PD0MFP_Msk          (0xful << SYS_GPD_MFPL_PD0MFP_Pos)                /*!< SYS_T::GPD_MFPL: PD0MFP Mask           */
 
@@ -12039,15 +12000,6 @@ typedef struct
 #define SYS_GPD_MFPL_PD3MFP_Pos          (12)                                              /*!< SYS_T::GPD_MFPL: PD3MFP Position       */
 #define SYS_GPD_MFPL_PD3MFP_Msk          (0xful << SYS_GPD_MFPL_PD3MFP_Pos)                /*!< SYS_T::GPD_MFPL: PD3MFP Mask           */
 
-#define SYS_GPD_MFPL_PD4MFP_Pos          (16)                                              /*!< SYS_T::GPD_MFPL: PD4MFP Position       */
-#define SYS_GPD_MFPL_PD4MFP_Msk          (0xful << SYS_GPD_MFPL_PD4MFP_Pos)                /*!< SYS_T::GPD_MFPL: PD4MFP Mask           */
-
-#define SYS_GPD_MFPL_PD5MFP_Pos          (20)                                              /*!< SYS_T::GPD_MFPL: PD5MFP Position       */
-#define SYS_GPD_MFPL_PD5MFP_Msk          (0xful << SYS_GPD_MFPL_PD5MFP_Pos)                /*!< SYS_T::GPD_MFPL: PD5MFP Mask           */
-
-#define SYS_GPD_MFPL_PD6MFP_Pos          (24)                                              /*!< SYS_T::GPD_MFPL: PD6MFP Position       */
-#define SYS_GPD_MFPL_PD6MFP_Msk          (0xful << SYS_GPD_MFPL_PD6MFP_Pos)                /*!< SYS_T::GPD_MFPL: PD6MFP Mask           */
-
 #define SYS_GPD_MFPL_PD7MFP_Pos          (28)                                              /*!< SYS_T::GPD_MFPL: PD7MFP Position       */
 #define SYS_GPD_MFPL_PD7MFP_Msk          (0xful << SYS_GPD_MFPL_PD7MFP_Pos)                /*!< SYS_T::GPD_MFPL: PD7MFP Mask           */
 
@@ -12056,12 +12008,6 @@ typedef struct
 
 #define SYS_GPD_MFPH_PD9MFP_Pos          (4)                                               /*!< SYS_T::GPD_MFPH: PD9MFP Position       */
 #define SYS_GPD_MFPH_PD9MFP_Msk          (0xful << SYS_GPD_MFPH_PD9MFP_Pos)                /*!< SYS_T::GPD_MFPH: PD9MFP Mask           */
-
-#define SYS_GPD_MFPH_PD10MFP_Pos         (8)                                               /*!< SYS_T::GPD_MFPH: PD10MFP Position      */
-#define SYS_GPD_MFPH_PD10MFP_Msk         (0xful << SYS_GPD_MFPH_PD10MFP_Pos)               /*!< SYS_T::GPD_MFPH: PD10MFP Mask          */
-
-#define SYS_GPD_MFPH_PD11MFP_Pos         (12)                                              /*!< SYS_T::GPD_MFPH: PD11MFP Position      */
-#define SYS_GPD_MFPH_PD11MFP_Msk         (0xful << SYS_GPD_MFPH_PD11MFP_Pos)               /*!< SYS_T::GPD_MFPH: PD11MFP Mask          */
 
 #define SYS_GPD_MFPH_PD12MFP_Pos         (16)                                              /*!< SYS_T::GPD_MFPH: PD12MFP Position      */
 #define SYS_GPD_MFPH_PD12MFP_Msk         (0xful << SYS_GPD_MFPH_PD12MFP_Pos)               /*!< SYS_T::GPD_MFPH: PD12MFP Mask          */
@@ -12075,23 +12021,8 @@ typedef struct
 #define SYS_GPD_MFPH_PD15MFP_Pos         (28)                                              /*!< SYS_T::GPD_MFPH: PD15MFP Position      */
 #define SYS_GPD_MFPH_PD15MFP_Msk         (0xful << SYS_GPD_MFPH_PD15MFP_Pos)               /*!< SYS_T::GPD_MFPH: PD15MFP Mask          */
 
-#define SYS_GPE_MFPL_PE0MFP_Pos          (0)                                               /*!< SYS_T::GPE_MFPL: PE0MFP Position       */
-#define SYS_GPE_MFPL_PE0MFP_Msk          (0xful << SYS_GPE_MFPL_PE0MFP_Pos)                /*!< SYS_T::GPE_MFPL: PE0MFP Mask           */
-
-#define SYS_GPE_MFPL_PE1MFP_Pos          (4)                                               /*!< SYS_T::GPE_MFPL: PE1MFP Position       */
-#define SYS_GPE_MFPL_PE1MFP_Msk          (0xful << SYS_GPE_MFPL_PE1MFP_Pos)                /*!< SYS_T::GPE_MFPL: PE1MFP Mask           */
-
 #define SYS_GPE_MFPL_PE2MFP_Pos          (8)                                               /*!< SYS_T::GPE_MFPL: PE2MFP Position       */
 #define SYS_GPE_MFPL_PE2MFP_Msk          (0xful << SYS_GPE_MFPL_PE2MFP_Pos)                /*!< SYS_T::GPE_MFPL: PE2MFP Mask           */
-
-#define SYS_GPE_MFPL_PE3MFP_Pos          (12)                                              /*!< SYS_T::GPE_MFPL: PE3MFP Position       */
-#define SYS_GPE_MFPL_PE3MFP_Msk          (0xful << SYS_GPE_MFPL_PE3MFP_Pos)                /*!< SYS_T::GPE_MFPL: PE3MFP Mask           */
-
-#define SYS_GPE_MFPL_PE4MFP_Pos          (16)                                              /*!< SYS_T::GPE_MFPL: PE4MFP Position       */
-#define SYS_GPE_MFPL_PE4MFP_Msk          (0xful << SYS_GPE_MFPL_PE4MFP_Pos)                /*!< SYS_T::GPE_MFPL: PE4MFP Mask           */
-
-#define SYS_GPE_MFPL_PE5MFP_Pos          (20)                                              /*!< SYS_T::GPE_MFPL: PE5MFP Position       */
-#define SYS_GPE_MFPL_PE5MFP_Msk          (0xful << SYS_GPE_MFPL_PE5MFP_Pos)                /*!< SYS_T::GPE_MFPL: PE5MFP Mask           */
 
 #define SYS_GPE_MFPL_PE6MFP_Pos          (24)                                              /*!< SYS_T::GPE_MFPL: PE6MFP Position       */
 #define SYS_GPE_MFPL_PE6MFP_Msk          (0xful << SYS_GPE_MFPL_PE6MFP_Pos)                /*!< SYS_T::GPE_MFPL: PE6MFP Mask           */
@@ -12131,12 +12062,6 @@ typedef struct
 
 #define SYS_GPF_MFPL_PF4MFP_Pos          (16)                                              /*!< SYS_T::GPF_MFPL: PF4MFP Position       */
 #define SYS_GPF_MFPL_PF4MFP_Msk          (0xful << SYS_GPF_MFPL_PF4MFP_Pos)                /*!< SYS_T::GPF_MFPL: PF4MFP Mask           */
-
-#define SYS_GPF_MFPL_PF5MFP_Pos          (20)                                              /*!< SYS_T::GPF_MFPL: PF5MFP Position       */
-#define SYS_GPF_MFPL_PF5MFP_Msk          (0xful << SYS_GPF_MFPL_PF5MFP_Pos)                /*!< SYS_T::GPF_MFPL: PF5MFP Mask           */
-
-#define SYS_GPF_MFPL_PF6MFP_Pos          (24)                                              /*!< SYS_T::GPF_MFPL: PF6MFP Position       */
-#define SYS_GPF_MFPL_PF6MFP_Msk          (0xful << SYS_GPF_MFPL_PF6MFP_Pos)                /*!< SYS_T::GPF_MFPL: PF6MFP Mask           */
 
 #define SYS_GPF_MFPL_PF7MFP_Pos          (28)                                              /*!< SYS_T::GPF_MFPL: PF7MFP Position       */
 #define SYS_GPF_MFPL_PF7MFP_Msk          (0xful << SYS_GPF_MFPL_PF7MFP_Pos)                /*!< SYS_T::GPF_MFPL: PF7MFP Mask           */
