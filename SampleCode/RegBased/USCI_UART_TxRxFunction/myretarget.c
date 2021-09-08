@@ -2,7 +2,7 @@
  * @file     myretarget.c
  * @version  V3.00
  * $Revision: 2 $
- * $Date: 16/10/25 4:28p $
+ * $Date: 16/10/25 4:34p $
  * @brief    NUC1261 Series Debug Port and Semihost Setting Source File
  *
  * @note
@@ -26,6 +26,13 @@
 /* Global variables                                                                                        */
 /*---------------------------------------------------------------------------------------------------------*/
 #if !(defined(__ICCARM__) && (__VER__ >= 6010000))
+# if (__ARMCC_VERSION < 6040000)
+struct __FILE
+{
+    int handle; /* Add whatever you need here */
+};
+# endif
+#elif(__VER__ >= 8000000)
 struct __FILE
 {
     int handle; /* Add whatever you need here */
@@ -543,7 +550,7 @@ char GetChar(void)
  * @retval   1: No any char input
  * @retval   0: Have some char input
  *
- * @details  Check UART RX EMPTY or not to determine if any char input from UART
+ * @details  Check UART RSR RX EMPTY or not to determine if any char input from UART
  */
 
 int kbhit(void)
