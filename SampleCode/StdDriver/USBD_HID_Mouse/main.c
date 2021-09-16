@@ -103,10 +103,10 @@ void SYS_Init(void)
     SYS->GPA_MFPL |= (SYS_GPA_MFPL_PA3MFP_UART0_RXD | SYS_GPA_MFPL_PA2MFP_UART0_TXD);
 
     /* Set PD multi-function pins for CLKO */
-    SYS->GPD_MFPL &= ~(SYS_GPD_MFPL_PD5MFP_CLKO);
-    SYS->GPD_MFPL |= SYS_GPD_MFPL_PD5MFP_CLKO;
+    SYS->GPC_MFPL &= ~(SYS_GPC_MFPL_PC1MFP_CLKO);
+    SYS->GPC_MFPL |= SYS_GPC_MFPL_PC1MFP_CLKO;
 
-    /* Enable CLKO(PD5) for monitor clock. CLKO = clock src/64 Hz
+    /* Enable CLKO(PC1) for monitor clock. CLKO = clock src/64 Hz
         000 = Clock source from 4~24 MHz external high speed crystal oscillator (HXT) clock.
         001 = Clock source from 32.768 kHz external low speed crystal oscillator (LXT) clock.
         010 = Clock source from HCLK.

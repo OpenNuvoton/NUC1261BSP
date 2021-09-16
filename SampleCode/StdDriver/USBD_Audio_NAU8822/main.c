@@ -111,9 +111,9 @@ void SYS_Init(void)
     SYS->GPA_MFPL |= (SYS_GPA_MFPL_PA3MFP_UART0_RXD | SYS_GPA_MFPL_PA2MFP_UART0_TXD);
 
 
-    /* Set GPD multi-function pins for Clock Output */
-    SYS->GPD_MFPL &= ~(SYS_GPD_MFPL_PD5MFP_Msk);
-    SYS->GPD_MFPL |= (SYS_GPD_MFPL_PD5MFP_CLKO);
+    /* Set GPC multi-function pins for Clock Output */
+    SYS->GPC_MFPL &= ~(SYS_GPC_MFPL_PC1MFP_Msk);
+    SYS->GPC_MFPL |= (SYS_GPC_MFPL_PC1MFP_CLKO);
 
 
     /* Set GPE12, GPE13 to be I2C */
