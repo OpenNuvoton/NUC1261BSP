@@ -168,7 +168,8 @@ int main(void)
     printf("************************************************************************\n");
     printf("* Please connect MX29LV320T nor flash to EBI bank1 before accessing !! *\n");
     printf("* EBI pins settings:                                                   *\n");
-    printf("*   - AD0 ~ AD7 on PA.0 ~ PA.7                                         *\n");
+    printf("*   - AD0 ~ AD3 on PA.0 ~ PA.3                                         *\n");
+    printf("*   - AD4 ~ AD7 on PB.7 ~ PB.4                                         *\n");
     printf("*   - AD8 ~ AD15 on PC.0 ~ PC.7                                        *\n");
     printf("*   - AD16 ~ AD19 on PD.12 ~ PD.15                                     *\n");
     printf("*   - nWR on PD.2                                                      *\n");
