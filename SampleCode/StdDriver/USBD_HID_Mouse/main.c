@@ -102,7 +102,7 @@ void SYS_Init(void)
     SYS->GPA_MFPL &= ~(SYS_GPA_MFPL_PA3MFP_Msk | SYS_GPA_MFPL_PA2MFP_Msk);
     SYS->GPA_MFPL |= (SYS_GPA_MFPL_PA3MFP_UART0_RXD | SYS_GPA_MFPL_PA2MFP_UART0_TXD);
 
-    /* Set PD multi-function pins for CLKO */
+    /* Set PC multi-function pins for CLKO */
     SYS->GPC_MFPL &= ~(SYS_GPC_MFPL_PC1MFP_CLKO);
     SYS->GPC_MFPL |= SYS_GPC_MFPL_PC1MFP_CLKO;
 

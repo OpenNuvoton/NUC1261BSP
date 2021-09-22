@@ -127,7 +127,7 @@ void SYS_Init(void)
     SYS->GPB_MFPL = (SYS->GPB_MFPL & (~0x00FFFF00)) | 0x00222200; /* PB[5:2] : SPI0_MOSI0, SPI0_SS, SPI0_MISO0, SPI0_CLK */
     PB->SLEWCTL |= 0x3C;
 
-    /* Enable CLKO(PD5) for monitor HCLK. CLKO = HIRC/64 Hz */
+    /* Enable CLKO(PC1) for monitor HCLK. CLKO = HIRC/64 Hz */
     EnableCLKO((3 << CLK_CLKSEL2_CLKOSEL_Pos), 5);
 }
 
@@ -183,7 +183,7 @@ int32_t main(void)
 
             PC5 <-> I2S_MCLK
 
-        PD5 is used to output clock (HCLK/8) to check HCLK frequency.
+        PC1 is used to output clock (HCLK/8) to check HCLK frequency.
 
         Clock config (I2S Master Mode):
             PLL = 122,880,000 Hz
@@ -310,7 +310,7 @@ int32_t main(void)
             USBD->INTSTS = USBD_INTSTS_SOFIF_Msk;
         }
 
-				/* Check trim value whether it is over the threshold */
+        /* Check trim value whether it is over the threshold */
         if((M32(TRIM_INIT) > (s_u32DefaultTrim + TRIM_THRESHOLD)) || (M32(TRIM_INIT) < (s_u32DefaultTrim - TRIM_THRESHOLD)))
         {
             /* Write updated value */
@@ -320,7 +320,7 @@ int32_t main(void)
         {
             /* Backup trim value */
             s_u32LastTrim =  M32(TRIM_INIT);
-        }				
+        }
 
         /* Adjust codec sampling rate to synch with USB. The adjustment range is +-0.005% */
         AdjFreq();
