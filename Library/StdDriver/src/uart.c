@@ -140,15 +140,6 @@ void UART_DisableInt(UART_T*  uart, uint32_t u32InterruptFlag)
  *
  *    @details      The function is used to Enable UART auto flow control.
  */
-/**
- *    @brief        Enable UART auto flow control function
- *
- *    @param[in]    uart    The pointer of the specified UART module.
- *
- *    @return       None
- *
- *    @details      The function is used to Enable UART auto flow control.
- */
 void UART_EnableFlowCtrl(UART_T* uart)
 {
     /* Set RTS pin output is low level active */
@@ -368,7 +359,7 @@ void UART_SetTimeoutCnt(UART_T* uart, uint32_t u32TOC)
  *                                  - \ref UART_IRDA_RXEN
  *
  *    @return       None
-  *
+ *
  *    @details      The function is used to configure IrDA relative settings. It consists of TX or RX mode and baudrate.
  */
 void UART_SelectIrDAMode(UART_T* uart, uint32_t u32Buadrate, uint32_t u32Direction)
