@@ -1,5 +1,5 @@
 /**************************************************************************//**
- * @file     Smpl_DrvFMC.c
+ * @file     main.c
  * @version  V2.00
  * $Revision: 2 $
  * $Date: 16/10/25 4:26p $
@@ -20,6 +20,7 @@
 extern uint32_t Image$$RO$$Base;
 #endif
 
+int32_t g_FMC_i32ErrCode;
 
 void SYS_Init(void)
 {

@@ -53,7 +53,7 @@ void SYS_Init(void)
     SYS->GPA_MFPL &= ~(SYS_GPA_MFPL_PA3MFP_Msk | SYS_GPA_MFPL_PA2MFP_Msk);
     SYS->GPA_MFPL |= (SYS_GPA_MFPL_PA3MFP_UART0_RXD | SYS_GPA_MFPL_PA2MFP_UART0_TXD);
 
-    /* Set PD.1 as Timer0 toggle-outout pin*/
+    /* Set PD.1 as Timer0 toggle-outout pin */
     SYS->GPD_MFPL &= ~SYS_GPD_MFPL_PD1MFP_Msk;
     SYS->GPD_MFPL |= SYS_GPD_MFPL_PD1MFP_TM0;
 }
@@ -90,9 +90,9 @@ int main(void)
     UART0_Init();
 
     printf("\n\nCPU @ %d Hz\n", SystemCoreClock);
-    printf("+--------------------------------------------+\n");
-    printf("|    Timer Periodic Interrupt Sample Code    |\n");
-    printf("+--------------------------------------------+\n\n");
+    printf("+---------------------------------------+\n");
+    printf("|    Timer Toggle-output Sample Code    |\n");
+    printf("+---------------------------------------+\n\n");
 
     printf("This sample code will set Timer0 frequency 1000 Hz and generate 500Hz toggle output to T0(PD.1) pin.\n");
 

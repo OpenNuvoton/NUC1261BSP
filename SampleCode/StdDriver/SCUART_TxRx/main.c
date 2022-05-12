@@ -3,7 +3,7 @@
  * @version  V2.0
  * $Revision: 2 $
  * $Date: 16/10/25 4:30p $
- * @brief    Show Smartcrd UART by connecting PA.0 and PA.1 pins.
+ * @brief    Show Smartcard UART by connecting PA.0 and PA.1 pins.
  * @note
  * Copyright (C) 2016 Nuvoton Technology Corp. All rights reserved.
  ******************************************************************************/

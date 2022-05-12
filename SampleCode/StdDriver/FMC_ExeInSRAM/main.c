@@ -12,7 +12,6 @@
 #include <stdio.h>
 #include "NUC1261.h"
 
-#define PLLCTL_SETTING      CLK_PLLCTL_72MHz_HXT
 #define PLL_CLOCK           72000000
 
 #define APROM_TEST_BASE             0x3000
@@ -122,7 +121,7 @@ int main()
         if(u32Data != u32RData)
         {
             printf("[Read/Write FAIL]\n");
-            while(1);
+            return -1;
         }
     }
     /* Disable FMC ISP function */

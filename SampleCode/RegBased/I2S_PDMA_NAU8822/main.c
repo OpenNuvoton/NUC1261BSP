@@ -173,6 +173,7 @@ void SYS_Init(void)
     /* Set PC multi-function pins for SPI0_I2SMCLK. */
     SYS->GPC_MFPL &= ~(SYS_GPC_MFPL_PC5MFP_Msk);
     SYS->GPC_MFPL |= SYS_GPC_MFPL_PC5MFP_SPI0_I2SMCLK;
+
     /* Configure SPI0 related multi-function pins. */
     /* GPB[7:4] : SPI0_CLK (I2S_BCLK), SPI0_MISO (I2S_DI), SPI0_MOSI (I2S_DO), SPI0_SS (I2S_LRCLK). */
     SYS->GPB_MFPL &= ~(SYS_GPB_MFPL_PB4MFP_Msk | SYS_GPB_MFPL_PB5MFP_Msk | SYS_GPB_MFPL_PB6MFP_Msk | SYS_GPB_MFPL_PB7MFP_Msk);

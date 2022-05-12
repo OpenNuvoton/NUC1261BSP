@@ -11263,7 +11263,7 @@ typedef struct
      * |        |          |110 = 128 system clock (HCLK).
      * |        |          |111 = 256 system clock (HCLK).
      * |        |          |Note: These bits are write protected. Refer to the SYS_REGLCTL register.
-     * |[16]    |VDETEN    |Voltage Detector Enable Bit   
+     * |[16]    |VDETEN    |Voltage Detector Enable Bit
      * |        |          |0 = VDET detect external input voltage function Disabled.
      * |        |          |1 = VDET detect external input voltage function Enabled.
      * |        |          |Note1: This function is still active in whole chip power-down mode.
@@ -11276,7 +11276,7 @@ typedef struct
      * |        |          |Note2: If VDET_P1 is selected, multi-function pin must be selected correctly in PB1MFP (SYS_GPB_MFPL[7:4]).
      * |[18]    |VDETIEN   |Voltage Detector Interrupt Enable Bit
      * |        |          |0 = VDET interrupt Disabled.
-     * |        |          |1 = VDET interrupt Enabled.          
+     * |        |          |1 = VDET interrupt Enabled.
      * |[19]    |VDETIF    |Voltage Detector Interrupt Flag
      * |        |          |0 = VDET does not detect any voltage draft at external pin down through or up through the voltage of Bandgap.
      * |        |          |1 = When VDET detects the external pin is dropped down through the voltage of Bandgap or the external pin is raised up through the voltage of Bandgap, this bit is set to 1 and the brown-out interrupt is requested if brown-out interrupt is enabled.
@@ -11285,8 +11285,8 @@ typedef struct
      * |        |          |0 = VDET output status is 0.
      * |        |          |It means the detected voltage is higher than Bandgap or VDETEN is 0.
      * |        |          |1 = VDET output status is 1.
-     * |        |          |It means the detected voltage is lower than Bandgap. 
-     * |        |          |If the VDETEN is 0, VDET function disabled, this bit always responds 0. 
+     * |        |          |It means the detected voltage is lower than Bandgap.
+     * |        |          |If the VDETEN is 0, VDET function disabled, this bit always responds 0.
      * |[27:25] |VDETDGSEL |Voltage Detector Output De-glitch Time Select (Write Protect)
      * |        |          |000 = VDET output is sampled by VDET clock.
      * |        |          |001 = 16 system clock (HCLK).
@@ -11296,7 +11296,7 @@ typedef struct
      * |        |          |101 = 256 system clock (HCLK).
      * |        |          |110 = 512 system clock (HCLK).
      * |        |          |111 = 1024 system clock (HCLK).
-     * |        |          |Note: These bits are write protected. Refer to the SYS_REGLCTL register.     
+     * |        |          |Note: These bits are write protected. Refer to the SYS_REGLCTL register.
      * @var SYS_T::IVSCTL
      * Offset: 0x1C  Internal Voltage Source Control Register
      * ---------------------------------------------------------------------------------------------------
