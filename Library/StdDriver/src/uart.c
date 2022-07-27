@@ -476,7 +476,7 @@ uint32_t UART_Write(UART_T* uart, uint8_t *pu8TxBuf, uint32_t u32WriteBytes)
         {
             u32delayno++;
             if(u32delayno >= 0x40000000)
-                return FALSE;
+                return u32Count;
         }
         uart->DAT = pu8TxBuf[u32Count];    /* Send UART Data from buffer */
     }

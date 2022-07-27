@@ -550,7 +550,7 @@ char GetChar(void)
  * @retval   1: No any char input
  * @retval   0: Have some char input
  *
- * @details  Check UART RSR RX EMPTY or not to determine if any char input from UART
+ * @details  Check UART RX EMPTY or not to determine if any char input from UART
  */
 
 int kbhit(void)

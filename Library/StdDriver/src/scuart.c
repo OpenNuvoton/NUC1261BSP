@@ -68,11 +68,14 @@ static uint32_t SCUART_GetClock(SC_T *sc)
         u32Clk = CLK_GetPLLClockFreq();
     else if(u32ClkSrc == 2)
     {
-        SystemCoreClockUpdate();
-        if(CLK->CLKSEL0 & CLK_CLKSEL0_PCLK1SEL_Msk)
-            u32Clk = SystemCoreClock / 2;
+        if(u32Num == 1)
+        {
+            u32Clk = CLK_GetPCLK1Freq();
+        }
         else
-            u32Clk = SystemCoreClock;
+        {
+            u32Clk = CLK_GetPCLK0Freq();
+        }
     }
     else
         u32Clk = __HIRC;
