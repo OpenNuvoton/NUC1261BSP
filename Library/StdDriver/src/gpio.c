@@ -34,7 +34,7 @@
  *                          It could be BIT0 ~ BIT8, BIT11, BIT15 for PB. \n
  *                          It could be BIT0 ~ BIT7 for PC. \n
  *                          It could be BIT0 ~ BIT3, BIT7 ~ BIT9, BIT12 ~ BIT15 for PD. \n
- *                          It could be BIT2, BIT6 ~ BIT13 for PE. \n
+ *                          It could be BIT0, BIT2, BIT6 ~ BIT13 for PE. \n
  *                          It could be BIT0 ~ BIT4, BIT7 for PF.
  * @param[in]   u32Mode     Operation mode.  It could be
  *                          - \ref GPIO_MODE_INPUT
@@ -68,7 +68,7 @@ void GPIO_SetMode(GPIO_T *port, uint32_t u32PinMask, uint32_t u32Mode)
  *                              It could be 0 ~ 8, 11, 15 for PB GPIO port. \n
  *                              It could be 0 ~ 7 for PC GPIO port. \n
  *                              It could be 0 ~ 3, 7 ~ 9, 12 ~ 15 for PD GPIO port. \n
- *                              It could be 2, 6 ~ 13 for PE GPIO port. \n
+ *                              It could be 0, 2, 6 ~ 13 for PE GPIO port. \n
  *                              It could be 0 ~ 4, 7 for PF GPIO port.
  * @param[in]   u32IntAttribs   The interrupt attribute of specified GPIO pin. It could be
  *                              - \ref GPIO_INT_RISING
@@ -100,7 +100,7 @@ void GPIO_EnableInt(GPIO_T *port, uint32_t u32Pin, uint32_t u32IntAttribs)
  *                          It could be 0 ~ 8, 11, 15 for PB GPIO port. \n
  *                          It could be 0 ~ 7 for PC GPIO port. \n
  *                          It could be 0 ~ 3, 7 ~ 9, 12 ~ 15 for PD GPIO port. \n
- *                          It could be 2, 6 ~ 13 for PE GPIO port. \n
+ *                          It could be 0, 2, 6 ~ 13 for PE GPIO port. \n
  *                          It could be 0 ~ 4, 7 for PF GPIO port.
  *
  * @return      None

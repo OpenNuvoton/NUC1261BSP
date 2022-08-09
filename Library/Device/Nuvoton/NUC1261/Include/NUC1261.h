@@ -2312,7 +2312,7 @@ typedef struct
      * |        |          |n=0~8, 11, 15 for port B.
      * |        |          |Max. n=7 for port C.
      * |        |          |n=0~3, 7~9, 12~15 for port D.
-     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0, 2, 6~13 for port E.
      * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::DINOFF
      * Offset: 0x04/0x44/0x84/0xC4/0x104/0x144  PA-F Digital Input Path Disable Control
@@ -2329,7 +2329,7 @@ typedef struct
      * |        |          |n=0~8, 11, 15 for port B.
      * |        |          |Max. n=7 for port C.
      * |        |          |n=0~3, 7~9, 12~15 for port D.
-     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0, 2, 6~13 for port E.
      * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::DOUT
      * Offset: 0x08/0x48/0x88/0xC8/0x108/0x148  PA-F Data Output Value
@@ -2345,7 +2345,7 @@ typedef struct
      * |        |          |n=0~8, 11, 15 for port B.
      * |        |          |Max. n=7 for port C.
      * |        |          |n=0~3, 7~9, 12~15 for port D.
-     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0, 2, 6~13 for port E.
      * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::DATMSK
      * Offset: 0x0C/0x4C/0x8C/0xCC/0x10C/0x14C  PA-F Data Output Write Mask
@@ -2364,7 +2364,7 @@ typedef struct
      * |        |          |n=0~8, 11, 15 for port B.
      * |        |          |Max. n=7 for port C.
      * |        |          |n=0~3, 7~9, 12~15 for port D.
-     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0, 2, 6~13 for port E.
      * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::PIN
      * Offset: 0x10/0x50/0x90/0xD0/0x110/0x150  PA-F Pin Value
@@ -2379,7 +2379,7 @@ typedef struct
      * |        |          |n=0~8, 11, 15 for port B.
      * |        |          |Max. n=7 for port C.
      * |        |          |n=0~3, 7~9, 12~15 for port D.
-     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0, 2, 6~13 for port E.
      * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::DBEN
      * Offset: 0x14/0x54/0x94/0xD4/0x114/0x154  PA-F De-Bounce Enable Control
@@ -2399,7 +2399,7 @@ typedef struct
      * |        |          |n=0~8, 11, 15 for port B.
      * |        |          |Max. n=7 for port C.
      * |        |          |n=0~3, 7~9, 12~15 for port D.
-     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0, 2, 6~13 for port E.
      * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::INTTYPE
      * Offset: 0x18/0x58/0x98/0xD8/0x118/0x158  PA-F Interrupt Trigger Type Control
@@ -2421,7 +2421,7 @@ typedef struct
      * |        |          |n=0~8, 11, 15 for port B.
      * |        |          |Max. n=7 for port C.
      * |        |          |n=0~3, 7~9, 12~15 for port D.
-     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0, 2, 6~13 for port E.
      * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::INTEN
      * Offset: 0x1C/0x5C/0x9C/0xDC/0x11C/0x15C  PA-F Interrupt Enable Control
@@ -2441,7 +2441,7 @@ typedef struct
      * |        |          |n=0~8, 11, 15 for port B.
      * |        |          |Max. n=7 for port C.
      * |        |          |n=0~3, 7~9, 12~15 for port D.
-     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0, 2, 6~13 for port E.
      * |        |          |n=0~4, 7 for port F.
      * |[n+16   |RHIENn    |Port A-F Pin[n] Rising Edge or High Level Interrupt Trigger Type Enable Bit
      * |        |          |The RHIEN (Px_INTEN[n+16]) bit is used to enable the interrupt for each of the corresponding input Px.n pin.
@@ -2456,7 +2456,7 @@ typedef struct
      * |        |          |n=0~8, 11, 15 for port B.
      * |        |          |Max. n=7 for port C.
      * |        |          |n=0~3, 7~9, 12~15 for port D.
-     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0, 2, 6~13 for port E.
      * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::INTSRC
      * Offset: 0x20/0x60/0xA0/0xE0/0x120/0x160  PA-F Interrupt Source Flag
@@ -2475,7 +2475,7 @@ typedef struct
      * |        |          |n=0~8, 11, 15 for port B.
      * |        |          |Max. n=7 for port C.
      * |        |          |n=0~3, 7~9, 12~15 for port D.
-     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0, 2, 6~13 for port E.
      * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::SMTEN
      * Offset: 0x24/0x64/0xA4/0xE4/0x124/0x164  PA-F Input Schmitt Trigger Enable
@@ -2490,7 +2490,7 @@ typedef struct
      * |        |          |n=0~8, 11, 15 for port B.
      * |        |          |Max. n=7 for port C.
      * |        |          |n=0~3, 7~9, 12~15 for port D.
-     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0, 2, 6~13 for port E.
      * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::SLEWCTL
      * Offset: 0x28/0x68/0xA8/0xE8/0x128/0x168  PA-F High Slew Rate Control
@@ -2505,7 +2505,7 @@ typedef struct
      * |        |          |n=0~8, 11, 15 for port B.
      * |        |          |Max. n=7 for port C.
      * |        |          |n=0~3, 7~9, 12~15 for port D.
-     * |        |          |n=2, 6~13 for port E.
+     * |        |          |n=0, 2, 6~13 for port E.
      * |        |          |n=0~4, 7 for port F.
      * @var GPIO_T::DRVCTL
      * Offset: 0x12C  PE High Drive Strength Control
