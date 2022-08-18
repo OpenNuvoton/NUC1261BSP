@@ -11346,23 +11346,12 @@ typedef struct
      * |[7:4]   |PA1MFP    |PA.1 Multi-function Pin Selection
      * |[11:8]  |PA2MFP    |PA.2 Multi-function Pin Selection
      * |[15:12] |PA3MFP    |PA.3 Multi-function Pin Selection
-     * |[19:16] |PA4MFP    |PA.4 Multi-function Pin Selection
-     * |[23:20] |PA5MFP    |PA.5 Multi-function Pin Selection
-     * |[27:24] |PA6MFP    |PA.6 Multi-function Pin Selection
-     * |[31:28] |PA7MFP    |PA.7 Multi-function Pin Selection
      * @var SYS_T::GPA_MFPH
      * Offset: 0x34  GPIOA High Byte Multiple Function Control Register
      * ---------------------------------------------------------------------------------------------------
      * |Bits    |Field     |Descriptions
      * | :----: | :----:   | :---- |
-     * |[3:0]   |PA8MFP    |PA.8 Multi-function Pin Selection
-     * |[7:4]   |PA9MFP    |PA.9 Multi-function Pin Selection
-     * |[11:8]  |PA10MFP   |PA.10 Multi-function Pin Selection
-     * |[15:12] |PA11MFP   |PA.11 Multi-function Pin Selection
-     * |[19:16] |PA12MFP   |PA.12 Multi-function Pin Selection
-     * |[23:20] |PA13MFP   |PA.13 Multi-function Pin Selection
-     * |[27:24] |PA14MFP   |PA.14 Multi-function Pin Selection
-     * |[31:28] |PA15MFP   |PA.15 Multi-function Pin Selection
+     * |        |          |
      * @var SYS_T::GPB_MFPL
      * Offset: 0x38  GPIOB Low Byte Multiple Function Control Register
      * ---------------------------------------------------------------------------------------------------
@@ -11382,12 +11371,7 @@ typedef struct
      * |Bits    |Field     |Descriptions
      * | :----: | :----:   | :---- |
      * |[3:0]   |PB8MFP    |PB.8 Multi-function Pin Selection
-     * |[7:4]   |PB9MFP    |PB.9 Multi-function Pin Selection
-     * |[11:8]  |PB10MFP   |PB.10 Multi-function Pin Selection
      * |[15:12] |PB11MFP   |PB.11 Multi-function Pin Selection
-     * |[19:16] |PB12MFP   |PB.12 Multi-function Pin Selection
-     * |[23:20] |PB13MFP   |PB.13 Multi-function Pin Selection
-     * |[27:24] |PB14MFP   |PB.14 Multi-function Pin Selection
      * |[31:28] |PB15MFP   |PB.15 Multi-function Pin Selection
      * @var SYS_T::GPC_MFPL
      * Offset: 0x40  GPIOC Low Byte Multiple Function Control Register
@@ -11407,14 +11391,7 @@ typedef struct
      * ---------------------------------------------------------------------------------------------------
      * |Bits    |Field     |Descriptions
      * | :----: | :----:   | :---- |
-     * |[3:0]   |PC8MFP    |PC.8 Multi-function Pin Selection
-     * |[7:4]   |PC9MFP    |PC.9 Multi-function Pin Selection
-     * |[11:8]  |PC10MFP   |PC.10 Multi-function Pin Selection
-     * |[15:12] |PC11MFP   |PC.11 Multi-function Pin Selection
-     * |[19:16] |PC12MFP   |PC.12 Multi-function Pin Selection
-     * |[23:20] |PC13MFP   |PC.13 Multi-function Pin Selection
-     * |[27:24] |PC14MFP   |PC.14 Multi-function Pin Selection
-     * |[31:28] |PC15MFP   |PC.15 Multi-function Pin Selection
+     * |        |          |
      * @var SYS_T::GPD_MFPL
      * Offset: 0x48  GPIOD Low Byte Multiple Function Control Register
      * ---------------------------------------------------------------------------------------------------
@@ -11424,9 +11401,6 @@ typedef struct
      * |[7:4]   |PD1MFP    |PD.1 Multi-function Pin Selection
      * |[11:8]  |PD2MFP    |PD.2 Multi-function Pin Selection
      * |[15:12] |PD3MFP    |PD.3 Multi-function Pin Selection
-     * |[19:16] |PD4MFP    |PD.4 Multi-function Pin Selection
-     * |[23:20] |PD5MFP    |PD.5 Multi-function Pin Selection
-     * |[27:24] |PD6MFP    |PD.6 Multi-function Pin Selection
      * |[31:28] |PD7MFP    |PD.7 Multi-function Pin Selection
      * @var SYS_T::GPD_MFPH
      * Offset: 0x4C  GPIOD High Byte Multiple Function Control Register
@@ -11435,8 +11409,6 @@ typedef struct
      * | :----: | :----:   | :---- |
      * |[3:0]   |PD8MFP    |PD.8 Multi-function Pin Selection
      * |[7:4]   |PD9MFP    |PD.9 Multi-function Pin Selection
-     * |[11:8]  |PD10MFP   |PD.10 Multi-function Pin Selection
-     * |[15:12] |PD11MFP   |PD.11 Multi-function Pin Selection
      * |[19:16] |PD12MFP   |PD.12 Multi-function Pin Selection
      * |[23:20] |PD13MFP   |PD.13 Multi-function Pin Selection
      * |[27:24] |PD14MFP   |PD.14 Multi-function Pin Selection
@@ -11447,11 +11419,7 @@ typedef struct
      * |Bits    |Field     |Descriptions
      * | :----: | :----:   | :---- |
      * |[3:0]   |PE0MFP    |PE.0 Multi-function Pin Selection
-     * |[7:4]   |PE1MFP    |PE.1 Multi-function Pin Selection
      * |[11:8]  |PE2MFP    |PE.2 Multi-function Pin Selection
-     * |[15:12] |PE3MFP    |PE.3 Multi-function Pin Selection
-     * |[19:16] |PE4MFP    |PE.4 Multi-function Pin Selection
-     * |[23:20] |PE5MFP    |PE.5 Multi-function Pin Selection
      * |[27:24] |PE6MFP    |PE.6 Multi-function Pin Selection
      * |[31:28] |PE7MFP    |PE.7 Multi-function Pin Selection
      * @var SYS_T::GPE_MFPH
@@ -11481,8 +11449,6 @@ typedef struct
      * |        |          |The default value is set by flash controller user configuration register CFGXT1(CONFIG0[27]) bit.
      * |        |          |0 = PF.4 pin is configured as GPIO pins.
      * |        |          |1 = PF.4 pin is configured as external 4~24 MHz external high speed crystal oscillator (HXT) pins.
-     * |[23:20] |PF5MFP    |PF.5 Multi-function Pin Selection
-     * |[27:24] |PF6MFP    |PF.6 Multi-function Pin Selection
      * |[31:28] |PF7MFP    |PF.7 Multi-function Pin Selection
      * @var SYS_T::IRCTCTL0
      * Offset: 0x80  HIRC0 Trim Control Register
@@ -12020,6 +11986,9 @@ typedef struct
 
 #define SYS_GPD_MFPH_PD15MFP_Pos         (28)                                              /*!< SYS_T::GPD_MFPH: PD15MFP Position      */
 #define SYS_GPD_MFPH_PD15MFP_Msk         (0xful << SYS_GPD_MFPH_PD15MFP_Pos)               /*!< SYS_T::GPD_MFPH: PD15MFP Mask          */
+
+#define SYS_GPE_MFPL_PE0MFP_Pos          (0)                                               /*!< SYS_T::GPE_MFPL: PE0MFP Position       */
+#define SYS_GPE_MFPL_PE0MFP_Msk          (0xful << SYS_GPE_MFPL_PE0MFP_Pos)                /*!< SYS_T::GPE_MFPL: PE0MFP Mask           */
 
 #define SYS_GPE_MFPL_PE2MFP_Pos          (8)                                               /*!< SYS_T::GPE_MFPL: PE2MFP Position       */
 #define SYS_GPE_MFPL_PE2MFP_Msk          (0xful << SYS_GPE_MFPL_PE2MFP_Pos)                /*!< SYS_T::GPE_MFPL: PE2MFP Mask           */
