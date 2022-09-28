@@ -36,8 +36,8 @@ static volatile uint32_t s_u32DefaultTrim, s_u32LastTrim;
 #define RXBUFSIZE           512 /* RX buffer size */
 #define TXBUFSIZE           512 /* RX buffer size */
 
-#define TX_FIFO_SIZE_0      64  /* TX Hardware FIFO size */
-#define TX_FIFO_SIZE_1      64  /* TX Hardware FIFO size */
+#define TX_FIFO_SIZE_0      16  /* TX Hardware FIFO size */
+#define TX_FIFO_SIZE_1      16  /* TX Hardware FIFO size */
 
 /*---------------------------------------------------------------------------------------------------------*/
 /* Global variables                                                                                        */
