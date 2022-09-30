@@ -36,9 +36,6 @@ static volatile uint32_t s_u32DefaultTrim, s_u32LastTrim;
 #define RXBUFSIZE           512 /* RX buffer size */
 #define TXBUFSIZE           512 /* RX buffer size */
 
-#define TX_FIFO_SIZE_0      16  /* TX Hardware FIFO size */
-#define TX_FIFO_SIZE_1      16  /* TX Hardware FIFO size */
-
 /*---------------------------------------------------------------------------------------------------------*/
 /* Global variables                                                                                        */
 /*---------------------------------------------------------------------------------------------------------*/
@@ -232,9 +229,9 @@ void UART02_IRQHandler(void)
         {
             /* Fill the Tx FIFO */
             size = comTbytes0;
-            if(size >= TX_FIFO_SIZE_0)
+            if(size >= UART0_FIFO_SIZE)
             {
-                size = TX_FIFO_SIZE_0;
+                size = UART0_FIFO_SIZE;
             }
 
             while(size)
@@ -297,9 +294,9 @@ void UART1_IRQHandler(void)
         {
             /* Fill the Tx FIFO */
             size = comTbytes1;
-            if(size >= TX_FIFO_SIZE_1)
+            if(size >= UART1_FIFO_SIZE)
             {
-                size = TX_FIFO_SIZE_1;
+                size = UART1_FIFO_SIZE;
             }
 
             while(size)
