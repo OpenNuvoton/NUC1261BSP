@@ -27,7 +27,9 @@ void ProcessHardFault(void){}
 int32_t main()
 {
     int8_t item;
-
+#if (defined (__GNUC__) && (!(defined(__ARMCC_VERSION))))
+    initialise_monitor_handles();
+#endif
     /*
         To enable semihost, user must define "DEBUG_ENABLE_SEMIHOST" constant when buildind sample code.
         This sample code is used to show how to print message/getchar on IDE debug environment.
