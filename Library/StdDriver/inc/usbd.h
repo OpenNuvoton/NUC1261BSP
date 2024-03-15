@@ -5,14 +5,11 @@
  * @date     10, January, 2014
  *
  * @note
- *
  * @copyright SPDX-License-Identifier: Apache-2.0
  * @copyright Copyright (C) 2016 Nuvoton Technology Corp. All rights reserved.
  ******************************************************************************/
 #ifndef __USBD_H__
 #define __USBD_H__
-
-#define SUPPORT_LPM     // define to support LPM
 
 /** @addtogroup Standard_Driver Standard Driver
   @{
@@ -364,11 +361,8 @@ extern const S_USBD_INFO_T gsInfo;
   * @details  Return USB_ATTR[3:0] for USB bus events.
   *
   */
-#ifdef SUPPORT_LPM
-#define USBD_GET_BUS_STATE()        ((uint32_t)(USBD->ATTR & 0x300f))
-#else
 #define USBD_GET_BUS_STATE()        ((uint32_t)(USBD->ATTR & 0xf))
-#endif
+
 /**
   * @brief    Check cable connection state
   *
