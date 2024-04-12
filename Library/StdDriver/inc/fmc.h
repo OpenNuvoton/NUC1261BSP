@@ -593,8 +593,8 @@ static __INLINE int32_t FMC_SetVectorPageAddr(uint32_t u32PageAddr)
     FMC->ISPADDR = u32PageAddr;      /* The address of specified page which will be map to address 0x0. It must be page alignment. */
     FMC->ISPTRG = 0x1;               /* Trigger to start ISP procedure */
 #if ISBEN
-    __ISB();
-#endif                               /* To make sure ISP/CPU be Synchronized */
+    __ISB();                         /* To make sure ISP/CPU be Synchronized */
+#endif
     u32TimeOutCnt = FMC_TIMEOUT_WRITE;
     while(FMC->ISPTRG)               /* Waiting for ISP Done */
     {
@@ -800,6 +800,8 @@ void FMC_EnableConfigUpdate(void);
 void FMC_DisableConfigUpdate(void);
 void FMC_EnableLDUpdate(void);
 void FMC_DisableLDUpdate(void);
+void FMC_EnableSPUpdate(void);
+void FMC_DisableSPUpdate(void);
 int32_t FMC_ReadConfig(uint32_t *u32Config, uint32_t u32Count);
 int32_t FMC_WriteConfig(uint32_t *u32Config, uint32_t u32Count);
 void FMC_SetBootSource(int32_t i32BootSrc);
