@@ -152,8 +152,10 @@ int main()
     for(i = 0; i < 256; i++)
     {
         if(txbuf[i] != rDataBuf[i])
+        {
             printf("Data compare fail... R[%d] Data: 0x%X\n", i, rDataBuf[i]);
             goto failExit;
+        }
     }
     printf("Multi bytes Read access Pass.....\n");
     while(1);
