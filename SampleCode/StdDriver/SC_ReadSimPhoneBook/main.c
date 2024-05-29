@@ -49,7 +49,7 @@ void get_pin(void)
     int i = 0;
     char c = 0;
 
-    printf("Please input PIN number:");
+    printf("Please input PIN number:\n");
     while(i < 8)
     {
         c = getchar();
@@ -310,6 +310,8 @@ int main(void)
         goto exit;
     }
 
+    printf("SIM card activated successfully.\n\n");
+    
     /*
         Each SIM card contains a file system, below is a simplified example
 
