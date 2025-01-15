@@ -1,6 +1,6 @@
 /******************************************************************************
  * @file     descriptors.c
- * @brief    NUC1261 series USBD descriptor
+ * @brief    USBD descriptor file
  *
  * @note
  * @copyright SPDX-License-Identifier: Apache-2.0
